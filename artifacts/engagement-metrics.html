@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Engagement & Telemetry | Brian S Coughlin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+        th {
+            background-color: #1a2639;
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        pre {
+            background-color: #0f172a;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #38bdf8;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../index.html" class="back-link">&larr; Back to Executive Brief</a>
+        </header>
+        
+        <h1>Primary Engagement Metric Framework</h1>
+        <div class="subtitle">Designing Rigorous Telemetry for Community Health</div>
+
+        <p>Community platforms are designed to be more than static repositories; they are environments where creators share, learn, and build knowledge together. Measuring engagement effectively requires recognizing that both content creation and consumption are vital to overall ecosystem health.</p>
+
+        <p>A robust telemetry framework must capture three core behaviors:</p>
+        <ul>
+            <li><strong>Creation:</strong> Starting valuable discussions, posting replies, and providing verified solutions.</li>
+            <li><strong>Consumption:</strong> Reading, reacting to, and bookmarking content, even without posting.</li>
+            <li><strong>Depth of Participation:</strong> Interactions that are relevant and impactful, moving well beyond surface-level clicks.</li>
+        </ul>
+
+        <h2>The North Star Metric: Engaged User Rate (EUR)</h2>
+        <p><strong>Definition:</strong> The percentage of Monthly Active Users (MAU) who either create content or meaningfully interact with existing content in a given monthly period.</p>
+        
+        <p>“<strong>Meaningfully interact</strong>” is defined by strict quality thresholds:</p>
+        <ul>
+            <li>Reading &ge; 3 distinct topics with an average dwell time &ge; 15 seconds.</li>
+            <li>Posting at least once (topic or reply).</li>
+            <li>Contributing a positive reaction, bookmark, or marking a verified solution.</li>
+        </ul>
+
+        <h3>Why EUR Works</h3>
+        <ul>
+            <li><strong>Balanced:</strong> Assigns equal structural weight to creation and consumption.</li>
+            <li><strong>Retention Signal:</strong> Consumption reliably precedes creation; both predict long-term user stickiness.</li>
+            <li><strong>Quality Filter:</strong> Incorporates dwell time and action thresholds to prevent metric inflation from shallow page views or bot noise.</li>
+        </ul>
+
+        <h2>Implementation Architecture</h2>
+        <p><strong>Data Warehouse Sources (e.g., BigQuery Mart):</strong></p>
+        <ul>
+            <li><strong>topic_views_raw:</strong> Tracking topic view counts and session dwell time.</li>
+            <li><strong>posts_raw:</strong> Monitoring new threads and replies.</li>
+            <li><strong>engagement_fact:</strong> Aggregating likes, bookmarks, and accepted solutions.</li>
+            <li><strong>user_activity_fact:</strong> Calculating baseline MAU counts.</li>
+        </ul>
+
+        <h3>Formula Logic (Monthly Grain)</h3>
+        <pre><code>consumed_flag = viewed &ge; 3 topics AND avg dwell &ge; 15 sec
+created_flag  = &ge; 1 post/topic
+interacted_flag = &ge; 1 reaction (like/bookmark/solution)
+engaged_flag = consumed_flag OR created_flag OR interacted_flag
+EUR% = (engaged_users / total_mau) &times; 100</code></pre>
+
+        <h2>Supporting Diagnostics</h2>
+        <p>While EUR serves as the primary health metric, these supporting diagnostics provide operational clarity:</p>
+        <ol>
+            <li><strong>Creation-to-Consumption Ratio:</strong> Tracks the balance of engaged users who create versus those who only consume, preventing lurker-heavy skews.</li>
+            <li><strong>Depth of Session Engagement:</strong> Measures average engaged actions per user per month (posts, likes, replies, solutions given) to evaluate intensity.</li>
+            <li><strong>Return Rate of Engaged Users:</strong> Measures month-over-month retention of active cohorts.</li>
+            <li><strong>Engagement by Persona:</strong> Granular tracking across cohorts (new users, students, professionals, MVPs, staff).</li>
+        </ol>
+
+        <h2>Trade-Off Analysis</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Advantages</th>
+                    <th>Watchouts & Mitigations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Captures the full spectrum of user activity (reading + writing).</td>
+                    <td>Requires rigorous thresholding to filter out low-value default home page clicks.</td>
+                </tr>
+                <tr>
+                    <td>Directly aligns with platform activation and retention goals.</td>
+                    <td>Requires clean event instrumentation in data warehouses during initial setup.</td>
+                </tr>
+                <tr>
+                    <td>Applicable across personalization, gamification, and safety initiatives.</td>
+                    <td>Does not capture qualitative sentiment on its own; requires complementary survey telemetry.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Implementation Roadmap</h2>
+        <ol>
+            <li><strong>Model Deployment:</strong> Establish EUR and supporting measures within data warehouses.</li>
+            <li><strong>Dashboard Integration:</strong> Visualize EUR overall, by persona, and by category with trend lines and drill-downs.</li>
+            <li><strong>Executive Reporting:</strong> Incorporate EUR into monthly platform KPIs for leadership review.</li>
+            <li><strong>Threshold Iteration:</strong> Continuously calibrate dwell time and view counts against real user patterns.</li>
+        </ol>
+
+        <div class="callout">
+            <p>"Vanity metrics measure noise. True platform telemetry measures how effectively you empower your users to build."</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Brian S Coughlin. Systems-thinking, local-first execution, and scalable product leadership.</p>
+        </footer>
+    </div>
+</body>
+</html>

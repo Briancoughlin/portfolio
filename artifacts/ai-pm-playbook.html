@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with an AI Agent: A PM Playbook | Brian S Coughlin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+        th {
+            background-color: #1a2639;
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../index.html" class="back-link">&larr; Back to Executive Brief</a>
+        </header>
+        
+        <h1>Working with an AI Agent: A PM Playbook</h1>
+        <div class="subtitle">Treating AI as an Operating System for Executive Leverage</div>
+
+        <p>I treat an AI agent as an operating system for my product management work, not a text generator: it holds context, checks my reasoning, and handles the administrative load so my attention stays entirely on high-level judgment calls.</p>
+
+        <p>This playbook sets out the principles, workflows, and guardrails I use day to day with a coding-capable agent connected to core productivity and data tooling (calendars, documentation repositories, task trackers, and analytics databases).</p>
+
+        <h2>Core Philosophy and Operating Principles</h2>
+        <p>Six principles shape every workflow below, structured as binding rules rather than loose aspirations:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Principle</th>
+                    <th>Practical Application</th>
+                    <th>Why It Matters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Never Maintain Observable State</strong></td>
+                    <td>If truth lives in a system of record (a ticket, calendar, or doc), the agent reads it directly. I never update a tracker by hand.</td>
+                    <td>Manual trackers drift. Keeping manual logs leads to synchronization gaps and inaccurate project status visibility.</td>
+                </tr>
+                <tr>
+                    <td><strong>Reduce Cognitive Load</strong></td>
+                    <td>Work arrives as one next step, not a massive list to review. Focus blocks carry a concrete first action.</td>
+                    <td>Lists drain attention during re-entry. A single, defined first step removes mental start-up friction.</td>
+                </tr>
+                <tr>
+                    <td><strong>The Agent Pushes Back</strong></td>
+                    <td>Standing instructions require the agent to challenge weak premises and flag scope creep before drafting anything.</td>
+                    <td>An agent that agrees by default accelerates flawed assumptions and bad architecture.</td>
+                </tr>
+                <tr>
+                    <td><strong>My Voice, Its Structure</strong></td>
+                    <td>For shared docs and communications, the agent outlines, raises questions, and supplies facts. I write the prose.</td>
+                    <td>Stakeholders easily spot machine-generated copy. Human editorial control and strategic judgment remain strictly mine.</td>
+                </tr>
+                <tr>
+                    <td><strong>Human Review Boundaries</strong></td>
+                    <td>Automations write strictly to private or staging surfaces. I review every output before anything is shared externally.</td>
+                    <td>Ensures zero unvetted statements or premature updates reach cross-functional partners.</td>
+                </tr>
+                <tr>
+                    <td><strong>Enterprise Access Paths</strong></td>
+                    <td>Interactive sessions run through enterprise-secured accounts via SSO. Programmatic scripts use approved internal API gateways.</td>
+                    <td>Protects corporate data boundaries while maintaining full auditability.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Key PM Workflows</h2>
+
+        <h3>Data and Analytics</h3>
+        <ul>
+            <li><strong>Querying Live Sources:</strong> The agent interfaces directly with product analytics, SQL explorers, and data warehouses via connectors. I pose questions in plain language; the agent writes and executes the queries.</li>
+            <li><strong>Stating Assumptions:</strong> Every query result explicitly outlines what was counted, what was excluded, and why (filtering out bot traffic, staff accounts, or skewed date windows).</li>
+            <li><strong>Conservative Framing:</strong> Short-term or noisy trends are labeled as "watch" or "inconclusive" rather than premature regressions until substantiated.</li>
+            <li><strong>Canonical Figures:</strong> Agreed headline metrics live in persistent agent memory to prevent inflated figures from leaking into executive decks.</li>
+        </ul>
+
+        <h3>Product Strategy and Specs</h3>
+        <ul>
+            <li><strong>House Templates:</strong> The agent maintains awareness of standard product requirement document (PRD) and brief templates, aligning new specs instantly with organizational formatting standards.</li>
+            <li><strong>Socratic Drafting:</strong> Rather than writing a spec top-down, the agent builds an outline with targeted questions per section. I answer in rough notes, and it assembles the final draft in my voice.</li>
+            <li><strong>Rapid Prototyping:</strong> Building functional internal tools and interactive review pages in hours to test concepts before writing heavy documentation.</li>
+        </ul>
+
+        <h3>Cross-Functional Communication</h3>
+        <ul>
+            <li><strong>Async Summarization:</strong> Processing meeting transcripts and communication threads to extract decisions and action items, filtering out casual chatter to produce clean status updates.</li>
+            <li><strong>Tone and Guardrails:</strong> Enforcing communication standards that avoid defensive phrasing, prioritize restating partner perspectives first, and route ad-hoc asks into formal team service desks.</li>
+        </ul>
+
+        <h2>Context Architecture and Prompt Management</h2>
+        <p>Quality outputs stem from structured context layers that persist across sessions, keeping individual prompt requests short and precise:</p>
+        <ol>
+            <li><strong>Standing Rules:</strong> Short memory files governing tone, pushback, and safety boundaries with explicit rationales.</li>
+            <li><strong>Reference Facts:</strong> Canonical metrics, template repositories, and data source architectures.</li>
+            <li><strong>Project Context:</strong> Current milestones, open constraints, and absolute dates for active workstreams.</li>
+            <li><strong>Automated Work Logs:</strong> Session summaries automatically maintained by the agent to ensure seamless continuity across working days.</li>
+        </ol>
+
+        <h2>Guardrails and Failure Modes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Failure Mode</th>
+                    <th>Enforced Guardrail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Stale task trackers</td>
+                    <td>Agent verifies work closure directly from source systems of record.</td>
+                </tr>
+                <tr>
+                    <td>Inflated metrics</td>
+                    <td>Every query explicitly states inclusion/exclusion criteria and requires cross-validation.</td>
+                </tr>
+                <tr>
+                    <td>Robotic prose</td>
+                    <td>Strict Socratic drafting rules: human editorial control, no buzzword inflation, direct phrasing.</td>
+                </tr>
+                <tr>
+                    <td>Unvetted publishing</td>
+                    <td>Automations write strictly to private environments; manual sharing required.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout">
+            <p>"The agent carries memory, admin, and first drafts of structure. I carry decisions, relationships, and anything with my name on it."</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Brian S Coughlin. Systems-thinking, local-first execution, and scalable product leadership.</p>
+        </footer>
+    </div>
+</body>
+</html>

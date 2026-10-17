@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigating the AI Product Cycle | Brian S Coughlin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .chart-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .chart-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+        }
+        .chart-caption {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.75rem;
+        }
+        .cycle-diagram {
+            display: grid;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .cycle-step {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 1.25rem;
+        }
+        .cycle-step-number {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+        .cycle-step h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .cycle-step p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../index.html" class="back-link">&larr; Back to Executive Brief</a>
+        </header>
+        
+        <h1>Navigating the AI Product Cycle</h1>
+        <div class="subtitle">Mapping Feedback Loops and Protecting Content Supply</div>
+
+        <p>Every major technology wave triggers a predictable panic across product organizations. Leaders feel immense pressure to glue generative AI features into products whether they fit or not. Having navigated multiple platform shifts over two decades, my approach to the AI product cycle is grounded in a simple filter: does this genuinely reduce friction for the user, or is it just a marketing checkbox?</p>
+
+        <h2>The Content Supply Loop Hypothesis</h2>
+        <p>When analyzing developer platform behavior alongside automated AI search indexing, a critical ecosystem dynamic emerges: <strong>AI answer engines depend on humans continuously writing fresh troubleshooting content.</strong></p>
+
+        <!-- Embedded Chart Image -->
+        <div class="chart-container">
+            <img src="../assets/ai-cycle-chart.png" alt="AI usage cycle hypothesis chart showing 5 damping stages over time">
+            <div class="chart-caption">Figure 1.0: AI usage curve illustrating content supply starvation, stale retrieval dips, and stabilization.</div>
+        </div>
+
+        <div class="cycle-diagram">
+            <div class="cycle-step">
+                <div class="cycle-step-number">Stage 1</div>
+                <h3>Trust in AI Rises</h3>
+                <p>Developers stop asking questions directly in community forums because automated assistants answer initial queries.</p>
+            </div>
+            <div class="cycle-step">
+                <div class="cycle-step-number">Stage 2</div>
+                <h3>Supply Starvation (Peak)</h3>
+                <p>As forum traffic drops, the creation of fresh, community-sourced edge-case solutions slows down.</p>
+            </div>
+            <div class="cycle-step">
+                <div class="cycle-step-number">Stage 3</div>
+                <h3>Stale Retrieval & Dip</h3>
+                <p>Because new platform updates and APIs lack human-written troubleshooting context, AI answers eventually go out of date or hallucinate on edge cases.</p>
+            </div>
+            <div class="cycle-step">
+                <div class="cycle-step-number">Stage 4</div>
+                <h3>Return to Source</h3>
+                <p>Developers experience brittle AI answers on new releases and return to peer forums to find authentic workarounds.</p>
+            </div>
+            <div class="cycle-step">
+                <div class="cycle-step-number">Stage 5</div>
+                <h3>Stable Loop</h3>
+                <p>The loop repeats at a lower, more sustainable height until it reaches a stable equilibrium between automated search and human forums.</p>
+            </div>
+        </div>
+
+        <h2>Key Leadership Takeaways</h2>
+        <p>Product leaders cannot treat AI search as a complete replacement for community infrastructure. Sustainable platforms require a three-pillar architecture where documentation provides baseline structure, tutorials provide guided paths, and peer forums absorb the real-world edge cases that feed the entire ecosystem.</p>
+
+        <div class="callout">
+            <p>"If you starve the human content supply by hiding community knowledge behind closed walls, your AI assistant eventually runs on empty."</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Brian S Coughlin. Systems-thinking, local-first execution, and scalable product leadership.</p>
+        </footer>
+    </div>
+</body>
+</html>
