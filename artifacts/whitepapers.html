@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture White Papers — Brian S. Coughlin</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2.5rem 1rem;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-size: 0.95rem; }
+        h1 { font-size: 2.25rem; margin-bottom: 2rem; color: var(--text-primary); border-left: 4px solid var(--accent); padding-left: 0.75rem; letter-spacing: -0.025em; }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .paper-meta { font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+        .paper-card h2 { font-size: 1.35rem; color: var(--accent); margin-bottom: 1rem; }
+        .paper-card p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.95rem; }
+        .paper-links { display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.9rem; }
+        
+        footer { text-align: center; color: var(--text-secondary); font-size: 0.875rem; border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 4rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHNN1TP5FT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MHNN1TP5FT');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">&larr; Back to Portfolio Hub</a>
+        
+        <h1>Architecture White Papers & Frameworks</h1>
+
+        <div class="paper-card">
+            <div class="paper-meta">Strategic Analysis &bull; AI Ecosystems</div>
+            <h2>Navigating the AI Product Cycle</h2>
+            <p>A strategic architectural analysis mapping feedback loops, content supply dynamics, and economic equilibrium in high-velocity AI ecosystems. Explores how technical documentation and community forums function as primary citation sources for LLM search engines.</p>
+            <div class="paper-links">
+                <a href="ai-product-cycle.html">Read Full Paper &rarr;</a>
+            </div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-meta">Operational Framework &bull; Agentic Workflows</div>
+            <h2>Working with an AI Agent (PM Playbook)</h2>
+            <p>An operational framework detailing context window management, systemic guardrails, and executive leverage for probabilistic agent systems. Bridges the gap between raw LLM capabilities and reliable enterprise execution loops.</p>
+            <div class="paper-links">
+                <a href="ai-pm-playbook.html">Read Full Playbook &rarr;</a>
+            </div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-meta">Platform Telemetry &bull; Metrics</div>
+            <h2>Platform Engagement & Telemetry</h2>
+            <p>A rigorous framework defining data marts, diagnostic telemetry, and engagement metrics for technical developer platforms. Focuses on moving away from vanity metrics toward actionable vitality indicators like Engaged User Rates.</p>
+            <div class="paper-links">
+                <a href="engagement-metrics.html">Read Full Framework &rarr;</a>
+            </div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-meta">Infrastructure &bull; Data Sovereignty</div>
+            <h2>Local-First AI Infrastructure & Sovereignty</h2>
+            <p>Architectural blueprints for running air-gapped local LLMs, Dockerized containers, and agentic coding loops with complete data autonomy.</p>
+            <div class="paper-links">
+                <a href="ai-infrastructure.html">Read Infrastructure Guide &rarr;</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Brian S Coughlin. <a href="https://www.linkedin.com/in/brianscoughlin/" target="_blank">LinkedIn</a></p>
+        </footer>
+    </div>
+</body>
+</html>

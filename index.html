@@ -3,11 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian S Coughlin | Executive Brief & Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Brian S. Coughlin — Senior Product & Infrastructure Leader</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2.5rem 1rem;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
+        h1 { font-size: 2.5rem; color: var(--text-primary); margin-bottom: 0.5rem; letter-spacing: -0.025em; }
+        h2 { font-size: 1.25rem; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; }
+        
+        .hero-narrative {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .hero-narrative p { margin-bottom: 1rem; color: var(--text-secondary); }
+        .hero-narrative p:last-child { margin-bottom: 0; }
+        .hero-narrative strong { color: var(--text-primary); }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        @media (max-width: 640px) {
+            .nav-grid { grid-template-columns: 1fr; }
+        }
+        .nav-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.75rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .nav-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.1);
+        }
+        .nav-card h3 { color: var(--accent); font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .nav-card p { color: var(--text-secondary); font-size: 0.95rem; }
+
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            margin-top: 4rem;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHNN1TP5FT"></script>
     <script>
@@ -21,80 +87,30 @@
 <body>
     <div class="container">
         <header>
-            <div class="header-tag">Executive Brief &middot;</div>
-            <h1>Brian S Coughlin</h1>
-            <div class="subtitle">Scaling Developer Platforms, Community Infrastructure, and Resilient Systems</div>
-            
-            <!-- Header Profile & Jump Links -->
-            <div style="margin-top: 1rem; display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.85rem;">
-                <a href="https://github.com/briancoughlin/portfolio" target="_blank" style="color: var(--accent); text-decoration: none;">GitHub Repository &rarr;</a>
-                <a href="https://www.linkedin.com/in/briancoughlin/" target="_blank" style="color: var(--accent); text-decoration: none;">LinkedIn &rarr;</a>
-            </div>
+            <h1>Brian S. Coughlin</h1>
+            <h2>Senior Product & Infrastructure Leader | Developer Platforms & AI Workflows</h2>
         </header>
 
-        <section class="bio">
-            <p>With over two decades of leadership building developer platforms, community infrastructure, and high-scale technical systems at organizations like Unity and Perforce, I focus on systems-thinking, data sovereignty, and unblocking engineering execution. I build robust platforms that prioritize user trust and operational clarity over corporate bloat.</p>
-        </section>
+        <!-- Executive Narrative Trailer -->
+        <div class="hero-narrative">
+            <p><strong>The Focus:</strong> Building production-grade developer platforms, unifying fragmented ecosystems, and engineering reliable, local-first AI execution workflows.</p>
+            <p><strong>The Background:</strong> Over two decades of technical product leadership scaling developer infrastructure at Unity, streamlining enterprise toolchains at Perforce, and pioneering agentic automation systems.</p>
+        </div>
 
-        <section>
-            <h2>Core Leadership & Execution Pillars</h2>
-            <div class="thesis-grid">
-                <a href="artifacts/ai-infrastructure.html" class="card">
-                    <h3>AI as an Infrastructure Shift <span class="arrow">&rarr;</span></h3>
-                    <p>Moving past fragile API wrappers to build robust, local-first execution pipelines and practical engineering automation.</p>
-                </a>
-
-                <a href="artifacts/data-sovereignty.html" class="card">
-                    <h3>Ecosystem & Data Sovereignty <span class="arrow">&rarr;</span></h3>
-                    <p>Scaling platforms by prioritizing creator trust, self-hosted autonomy, and transparent, data-driven community infrastructure.</p>
-                </a>
-                
-                <a href="artifacts/change-management.html" class="card">
-                    <h3>Frictionless Execution <span class="arrow">&rarr;</span></h3>
-                    <p>Eliminating administrative drag and review bloat so cross-functional engineering teams can ship with high autonomy.</p>
-                </a>
-            </div>
-        </section>
-
-        <section>
-            <h2>White Papers & One-Pagers</h2>
-            <div class="thesis-grid">
-                <a href="artifacts/ai-product-cycle.html" class="card">
-                    <h3>Navigating the AI Product Cycle <span class="arrow">&rarr;</span></h3>
-                    <p>A strategic hypothesis mapping feedback loops, content supply starvation, and equilibrium in developer ecosystems.</p>
-                </a>
-
-                <a href="artifacts/engagement-metrics.html" class="card">
-                    <h3>Platform Engagement & Telemetry <span class="arrow">&rarr;</span></h3>
-                    <p>A rigorous one-pager defining the Engaged User Rate (EUR) framework, BigQuery data marts, and supporting diagnostics.</p>
-                </a>
-
-                <a href="artifacts/ai-pm-playbook.html" class="card">
-                    <h3>Working with an AI Agent: A PM Playbook <span class="arrow">&rarr;</span></h3>
-                    <p>An operational playbook detailing context architecture, systemic guardrails, and executive leverage frameworks.</p>
-                </a>
-            </div>
-        </section>
-
-        <section>
-            <h2>Industry Validation & References</h2>
-            <div class="endorsements-grid">
-                <div class="card endorsement-card">
-                    <h3>Larry Hryb</h3>
-                    <div class="endorsement-subtitle">Former Xbox Live Major Nelson &middot; Executive Reference</div>
-                    <p>"Brian has an instinct for what communities actually need. His focus on transparent infrastructure and creator trust makes him an invaluable leader for any technical platform."</p>
-                </div>
-
-                <div class="card endorsement-card">
-                    <h3>Osman Gormus</h3>
-                    <div class="endorsement-subtitle">Platform Engineering Leader &middot; Unity</div>
-                    <p>"Working with Brian means cutting straight through the administrative sludge. He builds systems that let engineering teams move fast and execute with absolute clarity."</p>
-                </div>
-            </div>
-        </section>
+        <!-- Sub-section Navigation Hub -->
+        <div class="nav-grid">
+            <a href="achievements.html" class="nav-card">
+                <h3>Key Achievements &rarr;</h3>
+                <p>Explore detailed case studies breaking down core operational challenges, architectural interventions, and hard metrics across Unity and Perforce.</p>
+            </a>
+            <a href="artifacts/whitepapers.html" class="nav-card">
+                <h3>Architecture White Papers &rarr;</h3>
+                <p>Read deep-dive strategic frameworks on AI product cycles, agentic collaboration playbooks, and technical platform telemetry.</p>
+            </a>
+        </div>
 
         <footer>
-            <p>&copy; 2026 Brian S Coughlin. Systems-thinking, local-first execution, and scalable product leadership.</p>
+            <p>&copy; 2026 Brian S Coughlin. <a href="https://www.linkedin.com/in/brianscoughlin/" target="_blank">LinkedIn</a> | <a href="https://github.com/briancoughlin">GitHub</a></p>
         </footer>
     </div>
 </body>
