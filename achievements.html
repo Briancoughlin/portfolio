@@ -42,14 +42,15 @@
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
     </style>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHNN1TP5FT"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-MHNN1TP5FT');
+      gtag('config', 'YOUR_MEASUREMENT_ID');
     </script>
 </head>
 <body>
@@ -59,27 +60,35 @@
         <h1>Key Architectural Achievements</h1>
 
         <div class="case-card">
+            <div class="case-meta">Unity Technologies &bull; Documentation Infrastructure</div>
+            <h2>Disrupting Developer Documentation: From 2-Month Bottlenecks to 4-Minute Builds</h2>
+            <p><strong>The Friction:</strong> Replacing a single documentation page took up to 2 months, leaving developers and users frustrated with out-of-date guides while writers suffered from severe burnout.</p>
+            <p><strong>The Intervention:</strong> Diagnosed that the bottleneck was structural tooling, not headcount. Shifted content left to draft docs before code landed, adopted a "docs-as-code" ethos using Markdown and Git for version control, replaced Jira with Git issues to turn users into active editors, and enforced an 80% perfection rule (because "you can't have quality if you don't have a doc at all").</p>
+            <p><strong>The Outcome:</strong> Architected an open-source platform that rebuilt and launched from scratch in just 4 minutes. Doubled readers every day for the first 3 weeks of launch, turned users into active contributors, and secured Algolia DocSearch at zero licensing cost under the community program.</p>
+        </div>
+
+        <div class="case-card">
             <div class="case-meta">Unity Technologies &bull; Platform Scale</div>
             <h2>Unifying Global Developer Ecosystems</h2>
-            <p><strong>The Friction:</strong> Fragmented developer forums, siloed documentation, and disjointed community touchpoints created heavy administrative drag and blind spots in engagement telemetry.</p>
-            <p><strong>The Architectural Intervention:</strong> Spearheaded a multi-year initiative to consolidate fragmented community platforms into a single unified ecosystem, integrating zero-cost open-source search (Algolia) and aligning telemetry for AI search engine indexing.</p>
-            <p><strong>The Outcome:</strong> Successfully streamlined discovery across global developer communities, reduced licensing overhead, and established robust telemetry frameworks (Engaged User Rate) to track platform vitality.</p>
+            <p><strong>The Friction:</strong> Fragmented developer forums and legacy community touchpoints created administrative overhead and siloed user activity.</p>
+            <p><strong>The Execution:</strong> Consolidated fragmented community platforms into a single unified ecosystem, integrating Algolia DocSearch (zero licence cost under the community program) and organizing curated technical content optimized for AI search engine crawlers (AEO).</p>
+            <p><strong>The Outcome:</strong> Scaled to 709K registered users (~200K monthly human visitors, excluding bot traffic), establishing a consistent platform vitality baseline of 4,996 posts and 16,095 active users alongside a NUO baseline of 57.7%.</p>
         </div>
 
         <div class="case-card">
             <div class="case-meta">Perforce Software &bull; Workflow Infrastructure</div>
-            <h2>Streamlining Enterprise Developer Toolchains</h2>
-            <p><strong>The Friction:</strong> Global engineering teams faced deployment bottlenecks, high administrative friction, and disconnects between core engineering capabilities and enterprise customer rollouts.</p>
-            <p><strong>The Architectural Intervention:</strong> Directed critical technical migration and workflow optimization projects, authoring rigorous technical playbooks and standardized deployment architectures.</p>
-            <p><strong>The Outcome:</strong> Accelerated internal developer velocity, reduced friction across global engineering pipelines, and ensured seamless enterprise customer onboarding.</p>
+            <h2>Streamlining Enterprise Developer Toolchains (Helix QAC)</h2>
+            <p><strong>The Context:</strong> Inherited an enterprise rollout forecast for Helix QAC 3 to 6 months late due to expanding feature bloat and cross-team workflow friction.</p>
+            <p><strong>The Intervention:</strong> Enforced rigorous scope culling by deferring secondary nice-to-have features, locking focus exclusively on core feature performance for the static code analyzer.</p>
+            <p><strong>The Outcome & Proof:</strong> Delivered Helix QAC 3 weeks ahead of schedule, achieving a 30% to 40% speed and throughput improvement on static code analyzer findings depending on volume. The deferred features were permanently dropped because they proved entirely unnecessary in production, validating that the scope cut preserved core value while accelerating delivery.</p>
         </div>
 
         <div class="case-card">
-            <div class="case-meta">Independent R&D &bull; Frontier AI Architecture</div>
-            <h2>Local-First AI Agent Execution & Data Sovereignty</h2>
-            <p><strong>The Friction:</strong> Modern AI workflows are hindered by cloud dependency costs, high-variance agent unpredictability, and rigid data-privacy vulnerabilities.</p>
-            <p><strong>The Architectural Intervention:</strong> Architected and deployed an end-to-end local-first AI coding pipeline and autonomous agent execution environment utilizing LM Studio, Ollama, Docker, and customized LLM workflows.</p>
-            <p><strong>The Outcome:</strong> Achieved 100% data sovereignty, eliminated external cloud dependency costs, and established automated state management telemetry to safely study and optimize high-variance agent behaviors.</p>
+            <div class="case-meta">Independent Engineering &bull; Developer Tooling</div>
+            <h2>Spell Guard: Mitigating Communication Friction in Distributed Teams</h2>
+            <p><strong>The Friction:</strong> Fast-paced distributed technical comms created friction from rapid-fire typos and unintended tone harshness, particularly impacting colleagues communicating in English as a second language.</p>
+            <p><strong>The Intervention:</strong> Architected and deployed Spell Guard—an automated send-guard for Slack and Jira powered by AutoHotkey, Windows UI Automation, and Claude via Unity's LiteLLM gateway. It intercepts outbound messages, flags ambiguity or harsh tone, and fails closed to ensure nothing leaves uninspected.</p>
+            <p><strong>The Outcome:</strong> Processed 157 messages across 3 weeks of live use, applying fixes to 71% of AI-reviewed messages before sending. Eliminated guesswork from typos for non-native English speakers and neutralized tone drift in high-tempo technical discussions.</p>
         </div>
 
         <footer>
